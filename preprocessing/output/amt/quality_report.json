@@ -1,0 +1,37 @@
+{
+  "dataset": "FakeNewsAMT",
+  "rows": 480,
+  "labels": {
+    "fake": 240,
+    "legit": 240
+  },
+  "domains": {
+    "business": 80,
+    "education": 80,
+    "entertainment": 80,
+    "politics": 80,
+    "sports": 80,
+    "technology": 80
+  },
+  "input_path": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\fakeNewsAMTDatasets.zip",
+  "input_sha256": "649dd52b0378b0f95a68afd4e55cfe8e3c70a6bd9d647e10194ebb69fb562f77",
+  "original_unchanged": true,
+  "replacement_character_ids": [
+    "edu-005-fake",
+    "edu-038-legit"
+  ],
+  "normalized_duplicate_groups": [],
+  "word_counts": {
+    "min": 58,
+    "mean": 121.98125,
+    "max": 288
+  },
+  "normalization": "NFC and whitespace only; retain headline, body, case, punctuation, numbers and negation",
+  "split": "unsplit",
+  "label_mapping": {
+    "legit": 0,
+    "fake": 1
+  },
+  "group_policy": "Filename topic/number identifies candidate pairs, not manually verified semantic pairs; keep groups together in any later split.",
+  "celebrity": "Excluded; separate collection"
+}

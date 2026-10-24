@@ -1,0 +1,2811 @@
+{
+  "dataset": "MultiFC",
+  "input_path": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\MultiFC_Codalab.zip",
+  "input_sha256": "92aa1563ae21c14b9bb377b468976f774ae3287c94321f752fd785b28134cb4f",
+  "original_unchanged": true,
+  "splits": {
+    "train": {
+      "rows": 27940,
+      "label_counts": {
+        "half-true": 2430,
+        "true": 2445,
+        "fiction!": 1252,
+        "false": 5552,
+        "mostly false": 2455,
+        "determination: mostly true": 55,
+        "truth!": 623,
+        "full flop": 118,
+        "mixture": 556,
+        "unproven": 432,
+        "in-between": 176,
+        "promise kept": 445,
+        "mostly true": 2471,
+        "pants on fire!": 1287,
+        "0": 1963,
+        "2": 92,
+        "none": 935,
+        "determination: misleading": 45,
+        "mostly fiction!": 60,
+        "bogus warning": 177,
+        "determination: false": 101,
+        "1": 253,
+        "2 pinnochios": 28,
+        "mostly truth!": 26,
+        "confirmed authorship!": 20,
+        "true messages": 242,
+        "incorrect": 97,
+        "compromise": 188,
+        "determination: true": 80,
+        "4 pinnochios": 53,
+        "a lot of baloney": 11,
+        "truth! & fiction!": 137,
+        "not the whole story": 21,
+        "not yet rated": 74,
+        "facebook scams": 384,
+        "stalled": 60,
+        "verdict: true": 125,
+        "authorship confirmed!": 30,
+        "promise broken": 218,
+        "3": 28,
+        "misleading": 96,
+        "verdict: false": 124,
+        "unsubstantiated messages": 44,
+        "mostly-correct": 62,
+        "in-the-green": 83,
+        "in-the-red": 91,
+        "fiction! & satire!": 14,
+        "verdict: unsubstantiated": 20,
+        "10": 14,
+        "factscan score: false": 35,
+        "miscaptioned": 122,
+        "in the works": 104,
+        "scam!": 17,
+        "3 pinnochios": 36,
+        "statirical reports": 112,
+        "fake news": 68,
+        "truth! & outdated!": 15,
+        "fake": 52,
+        "commentary!": 19,
+        "scam": 25,
+        "correct": 96,
+        "unsupported": 17,
+        "unproven!": 176,
+        "outdated": 40,
+        "factscan score: misleading": 26,
+        "half true": 12,
+        "factscan score: true": 28,
+        "some baloney": 7,
+        "rating: false": 5,
+        "legend": 52,
+        "half flip": 57,
+        "fact": 12,
+        "determination: huckster propaganda": 20,
+        "previously truth! now resolved!": 7,
+        "opinion!": 7,
+        "truth! & unproven!": 12,
+        "truth! & misleading!": 35,
+        "needs context": 5,
+        "unobservable": 5,
+        "no evidence": 6,
+        "exaggerated": 6,
+        "understated": 12,
+        "investigation pending!": 11,
+        "determination: barely true": 22,
+        "outdated!": 16,
+        "misattributed": 29,
+        "accurate": 20,
+        "inaccurate attribution!": 5,
+        "mostly_true": 21,
+        "incorrect attribution!": 20,
+        "virus!": 15,
+        "conclusion: unclear": 5,
+        "unverified": 5,
+        "no flip": 20,
+        "spins the facts": 6,
+        "disputed!": 49,
+        "a little baloney": 10,
+        "correct attribution!": 5,
+        "distorts the facts": 12,
+        "cherry picks": 2,
+        "correct attribution": 17,
+        "misleading recommendations": 22,
+        "verified": 14,
+        "conclusion: accurate": 8,
+        "partly true": 6,
+        "mostly_false": 5,
+        "grass roots movement!": 4,
+        "fiction": 5,
+        "4": 4,
+        "conclusion: false": 5,
+        "misleading!": 12,
+        "partially true": 6,
+        "determination: a stretch": 5,
+        "truth! & disputed!": 4,
+        "we rate this claim false": 5,
+        "exaggerates": 4
+      },
+      "empty_claim_ids": [
+        "bove-00197"
+      ],
+      "missing_metadata_counts": {
+        "claim_url": 0,
+        "reason": 14743,
+        "category": 18096,
+        "speaker": 13715,
+        "checker": 18266,
+        "tags": 26320,
+        "article_title": 12686,
+        "publication_date": 79,
+        "claim_date": 15201,
+        "entities": 17519
+      },
+      "unicode_line_separator_count": 0,
+      "domain_counts": {
+        "pomt": 12312,
+        "tron": 2648,
+        "snes": 5164,
+        "vogo": 522,
+        "abbc": 350,
+        "pose": 1089,
+        "goop": 2354,
+        "vees": 404,
+        "thet": 62,
+        "hoer": 1049,
+        "wast": 163,
+        "bove": 236,
+        "afck": 347,
+        "huca": 28,
+        "farg": 326,
+        "chct": 284,
+        "thal": 91,
+        "peck": 53,
+        "para": 175,
+        "faly": 57,
+        "faan": 89,
+        "clck": 20,
+        "ranz": 17,
+        "obry": 45,
+        "mpws": 37,
+        "fani": 18
+      },
+      "domain_label_counts": {
+        "abbc": {
+          "in-between": 176,
+          "in-the-green": 83,
+          "in-the-red": 91
+        },
+        "afck": {
+          "incorrect": 86,
+          "mostly-correct": 62,
+          "correct": 96,
+          "unproven": 59,
+          "exaggerated": 6,
+          "understated": 12,
+          "misleading": 26
+        },
+        "bove": {
+          "none": 231,
+          "rating: false": 5
+        },
+        "chct": {
+          "verdict: true": 125,
+          "verdict: false": 124,
+          "verdict: unsubstantiated": 20,
+          "none": 15
+        },
+        "clck": {
+          "incorrect": 11,
+          "unsupported": 5,
+          "misleading": 4
+        },
+        "faan": {
+          "factscan score: false": 35,
+          "factscan score: misleading": 26,
+          "factscan score: true": 28
+        },
+        "faly": {
+          "none": 18,
+          "true": 23,
+          "unverified": 5,
+          "partly true": 6,
+          "false": 5
+        },
+        "fani": {
+          "conclusion: unclear": 5,
+          "conclusion: accurate": 8,
+          "conclusion: false": 5
+        },
+        "farg": {
+          "not the whole story": 5,
+          "misleading": 31,
+          "false": 206,
+          "none": 42,
+          "unsupported": 12,
+          "no evidence": 6,
+          "spins the facts": 6,
+          "distorts the facts": 12,
+          "cherry picks": 2,
+          "exaggerates": 4
+        },
+        "goop": {
+          "0": 1963,
+          "2": 92,
+          "1": 253,
+          "3": 28,
+          "10": 14,
+          "4": 4
+        },
+        "hoer": {
+          "bogus warning": 177,
+          "true messages": 242,
+          "facebook scams": 384,
+          "unsubstantiated messages": 44,
+          "statirical reports": 112,
+          "fake news": 68,
+          "misleading recommendations": 22
+        },
+        "huca": {
+          "a lot of baloney": 11,
+          "some baloney": 7,
+          "a little baloney": 10
+        },
+        "mpws": {
+          "accurate": 20,
+          "misleading": 8,
+          "false": 9
+        },
+        "obry": {
+          "unobservable": 5,
+          "mostly_true": 21,
+          "verified": 14,
+          "mostly_false": 5
+        },
+        "para": {
+          "true": 20,
+          "mostly false": 40,
+          "mostly true": 38,
+          "false": 29,
+          "half-true": 36,
+          "half flip": 5,
+          "pants on fire!": 7
+        },
+        "peck": {
+          "false": 27,
+          "true": 20,
+          "partially true": 6
+        },
+        "pomt": {
+          "half-true": 2394,
+          "true": 1791,
+          "mostly false": 2055,
+          "false": 2325,
+          "full flop": 118,
+          "mostly true": 2277,
+          "pants on fire!": 1280,
+          "half flip": 52,
+          "no flip": 20
+        },
+        "pose": {
+          "promise kept": 445,
+          "compromise": 188,
+          "not yet rated": 74,
+          "stalled": 60,
+          "promise broken": 218,
+          "in the works": 104
+        },
+        "ranz": {
+          "fact": 12,
+          "fiction": 5
+        },
+        "snes": {
+          "false": 2903,
+          "mixture": 556,
+          "mostly false": 340,
+          "unproven": 365,
+          "true": 586,
+          "mostly true": 129,
+          "miscaptioned": 122,
+          "scam": 25,
+          "outdated": 40,
+          "legend": 52,
+          "misattributed": 29,
+          "correct attribution": 17
+        },
+        "thal": {
+          "mostly false": 12,
+          "mostly true": 20,
+          "none": 40,
+          "unproven": 8,
+          "half true": 6,
+          "we rate this claim false": 5
+        },
+        "thet": {
+          "mostly true": 7,
+          "none": 31,
+          "true": 5,
+          "half true": 6,
+          "false": 5,
+          "mostly false": 8
+        },
+        "tron": {
+          "fiction!": 1252,
+          "truth!": 623,
+          "mostly fiction!": 60,
+          "mostly truth!": 26,
+          "confirmed authorship!": 20,
+          "truth! & fiction!": 137,
+          "none": 57,
+          "authorship confirmed!": 30,
+          "fiction! & satire!": 14,
+          "scam!": 17,
+          "truth! & outdated!": 15,
+          "commentary!": 19,
+          "unproven!": 176,
+          "previously truth! now resolved!": 7,
+          "opinion!": 7,
+          "truth! & unproven!": 12,
+          "truth! & misleading!": 35,
+          "investigation pending!": 11,
+          "outdated!": 16,
+          "inaccurate attribution!": 5,
+          "incorrect attribution!": 20,
+          "virus!": 15,
+          "disputed!": 49,
+          "correct attribution!": 5,
+          "grass roots movement!": 4,
+          "misleading!": 12,
+          "truth! & disputed!": 4
+        },
+        "vees": {
+          "none": 302,
+          "fake": 52,
+          "misleading": 27,
+          "false": 23
+        },
+        "vogo": {
+          "determination: mostly true": 55,
+          "none": 194,
+          "determination: misleading": 45,
+          "determination: false": 101,
+          "determination: true": 80,
+          "determination: huckster propaganda": 20,
+          "determination: barely true": 22,
+          "determination: a stretch": 5
+        },
+        "wast": {
+          "2 pinnochios": 28,
+          "4 pinnochios": 53,
+          "3 pinnochios": 36,
+          "false": 20,
+          "needs context": 5,
+          "not the whole story": 16,
+          "none": 5
+        }
+      }
+    },
+    "dev": {
+      "rows": 3493,
+      "label_counts": {
+        "fiction!": 157,
+        "false": 694,
+        "outdated": 5,
+        "unproven": 54,
+        "mostly true": 309,
+        "promise broken": 27,
+        "1": 32,
+        "pants on fire!": 161,
+        "half-true": 304,
+        "mostly false": 306,
+        "true": 306,
+        "10": 2,
+        "in-between": 22,
+        "0": 245,
+        "legend": 7,
+        "not yet rated": 9,
+        "a lot of baloney": 1,
+        "bogus warning": 22,
+        "none": 116,
+        "truth!": 78,
+        "2": 11,
+        "promise kept": 56,
+        "fake news": 8,
+        "in-the-red": 11,
+        "mixture": 70,
+        "disputed!": 6,
+        "determination: true": 10,
+        "unproven!": 22,
+        "compromise": 23,
+        "unsubstantiated messages": 5,
+        "in-the-green": 10,
+        "facebook scams": 48,
+        "true messages": 30,
+        "verdict: false": 15,
+        "full flop": 15,
+        "mostly_true": 3,
+        "truth! & fiction!": 17,
+        "determination: mostly true": 7,
+        "incorrect": 12,
+        "in the works": 13,
+        "accurate": 3,
+        "some baloney": 1,
+        "determination: barely true": 3,
+        "fake": 6,
+        "understated": 1,
+        "misattributed": 4,
+        "confirmed authorship!": 2,
+        "2 pinnochios": 3,
+        "verdict: true": 16,
+        "truth! & unproven!": 2,
+        "misleading": 12,
+        "determination: false": 13,
+        "scam": 3,
+        "determination: huckster propaganda": 2,
+        "correct attribution": 2,
+        "needs context": 1,
+        "misleading recommendations": 3,
+        "scam!": 2,
+        "statirical reports": 14,
+        "exaggerated": 1,
+        "rating: false": 1,
+        "unsupported": 2,
+        "miscaptioned": 15,
+        "4 pinnochios": 7,
+        "truth! & misleading!": 4,
+        "factscan score: false": 4,
+        "mostly-correct": 8,
+        "half flip": 8,
+        "correct": 12,
+        "outdated!": 2,
+        "virus!": 2,
+        "mostly fiction!": 8,
+        "not the whole story": 3,
+        "unobservable": 1,
+        "determination: misleading": 6,
+        "fiction! & satire!": 2,
+        "3 pinnochios": 4,
+        "authorship confirmed!": 4,
+        "spins the facts": 1,
+        "3": 4,
+        "no evidence": 1,
+        "mostly truth!": 3,
+        "no flip": 2,
+        "distorts the facts": 2,
+        "opinion!": 1,
+        "incorrect attribution!": 3,
+        "factscan score: true": 4,
+        "truth! & disputed!": 1,
+        "previously truth! now resolved!": 1,
+        "unverified": 1,
+        "a little baloney": 1,
+        "verdict: unsubstantiated": 2,
+        "stalled": 7,
+        "commentary!": 2,
+        "half true": 2,
+        "conclusion: accurate": 1,
+        "truth! & outdated!": 2,
+        "grass roots movement!": 1,
+        "fact": 2,
+        "verified": 2,
+        "partly true": 1,
+        "partially true": 1,
+        "misleading!": 1,
+        "factscan score: misleading": 3,
+        "investigation pending!": 1,
+        "we rate this claim false": 1,
+        "mostly_false": 1,
+        "determination: a stretch": 1,
+        "correct attribution!": 1
+      },
+      "empty_claim_ids": [
+        "vees-00410"
+      ],
+      "missing_metadata_counts": {
+        "claim_url": 0,
+        "reason": 1839,
+        "category": 2261,
+        "speaker": 1714,
+        "checker": 2284,
+        "tags": 3288,
+        "article_title": 1586,
+        "publication_date": 9,
+        "claim_date": 1900,
+        "entities": 2214
+      },
+      "unicode_line_separator_count": 0,
+      "domain_counts": {
+        "tron": 332,
+        "snes": 646,
+        "pomt": 1540,
+        "pose": 135,
+        "goop": 294,
+        "farg": 41,
+        "abbc": 43,
+        "huca": 3,
+        "hoer": 130,
+        "bove": 30,
+        "vogo": 66,
+        "para": 24,
+        "peck": 6,
+        "chct": 35,
+        "obry": 7,
+        "vees": 50,
+        "afck": 43,
+        "mpws": 5,
+        "wast": 19,
+        "thet": 9,
+        "thal": 11,
+        "faly": 7,
+        "faan": 11,
+        "clck": 3,
+        "fani": 1,
+        "ranz": 2
+      },
+      "domain_label_counts": {
+        "abbc": {
+          "in-between": 22,
+          "in-the-red": 11,
+          "in-the-green": 10
+        },
+        "afck": {
+          "incorrect": 11,
+          "understated": 1,
+          "unproven": 7,
+          "misleading": 3,
+          "exaggerated": 1,
+          "mostly-correct": 8,
+          "correct": 12
+        },
+        "bove": {
+          "none": 29,
+          "rating: false": 1
+        },
+        "chct": {
+          "verdict: false": 15,
+          "none": 2,
+          "verdict: true": 16,
+          "verdict: unsubstantiated": 2
+        },
+        "clck": {
+          "incorrect": 1,
+          "misleading": 1,
+          "unsupported": 1
+        },
+        "faan": {
+          "factscan score: false": 4,
+          "factscan score: true": 4,
+          "factscan score: misleading": 3
+        },
+        "faly": {
+          "true": 3,
+          "none": 2,
+          "unverified": 1,
+          "partly true": 1
+        },
+        "fani": {
+          "conclusion: accurate": 1
+        },
+        "farg": {
+          "false": 26,
+          "unsupported": 1,
+          "not the whole story": 1,
+          "spins the facts": 1,
+          "misleading": 4,
+          "no evidence": 1,
+          "distorts the facts": 2,
+          "none": 5
+        },
+        "goop": {
+          "1": 32,
+          "10": 2,
+          "0": 245,
+          "2": 11,
+          "3": 4
+        },
+        "hoer": {
+          "bogus warning": 22,
+          "fake news": 8,
+          "unsubstantiated messages": 5,
+          "facebook scams": 48,
+          "true messages": 30,
+          "misleading recommendations": 3,
+          "statirical reports": 14
+        },
+        "huca": {
+          "a lot of baloney": 1,
+          "some baloney": 1,
+          "a little baloney": 1
+        },
+        "mpws": {
+          "accurate": 3,
+          "false": 1,
+          "misleading": 1
+        },
+        "obry": {
+          "mostly_true": 3,
+          "unobservable": 1,
+          "verified": 2,
+          "mostly_false": 1
+        },
+        "para": {
+          "mostly true": 5,
+          "half-true": 5,
+          "false": 4,
+          "true": 3,
+          "pants on fire!": 1,
+          "mostly false": 5,
+          "half flip": 1
+        },
+        "peck": {
+          "false": 3,
+          "true": 2,
+          "partially true": 1
+        },
+        "pomt": {
+          "mostly true": 285,
+          "pants on fire!": 160,
+          "false": 291,
+          "half-true": 299,
+          "true": 224,
+          "mostly false": 257,
+          "full flop": 15,
+          "half flip": 7,
+          "no flip": 2
+        },
+        "pose": {
+          "promise broken": 27,
+          "not yet rated": 9,
+          "promise kept": 56,
+          "compromise": 23,
+          "in the works": 13,
+          "stalled": 7
+        },
+        "ranz": {
+          "fact": 2
+        },
+        "snes": {
+          "false": 363,
+          "outdated": 5,
+          "unproven": 46,
+          "mostly false": 42,
+          "mostly true": 16,
+          "true": 73,
+          "legend": 7,
+          "mixture": 70,
+          "misattributed": 4,
+          "scam": 3,
+          "correct attribution": 2,
+          "miscaptioned": 15
+        },
+        "thal": {
+          "mostly true": 2,
+          "none": 5,
+          "mostly false": 1,
+          "half true": 1,
+          "we rate this claim false": 1,
+          "unproven": 1
+        },
+        "thet": {
+          "none": 4,
+          "true": 1,
+          "false": 1,
+          "half true": 1,
+          "mostly true": 1,
+          "mostly false": 1
+        },
+        "tron": {
+          "fiction!": 157,
+          "none": 7,
+          "truth!": 78,
+          "disputed!": 6,
+          "unproven!": 22,
+          "truth! & fiction!": 17,
+          "confirmed authorship!": 2,
+          "truth! & unproven!": 2,
+          "scam!": 2,
+          "truth! & misleading!": 4,
+          "outdated!": 2,
+          "virus!": 2,
+          "mostly fiction!": 8,
+          "fiction! & satire!": 2,
+          "authorship confirmed!": 4,
+          "mostly truth!": 3,
+          "opinion!": 1,
+          "incorrect attribution!": 3,
+          "truth! & disputed!": 1,
+          "previously truth! now resolved!": 1,
+          "commentary!": 2,
+          "truth! & outdated!": 2,
+          "grass roots movement!": 1,
+          "misleading!": 1,
+          "investigation pending!": 1,
+          "correct attribution!": 1
+        },
+        "vees": {
+          "none": 38,
+          "fake": 6,
+          "false": 3,
+          "misleading": 3
+        },
+        "vogo": {
+          "none": 24,
+          "determination: true": 10,
+          "determination: mostly true": 7,
+          "determination: barely true": 3,
+          "determination: false": 13,
+          "determination: huckster propaganda": 2,
+          "determination: misleading": 6,
+          "determination: a stretch": 1
+        },
+        "wast": {
+          "2 pinnochios": 3,
+          "needs context": 1,
+          "4 pinnochios": 7,
+          "3 pinnochios": 4,
+          "not the whole story": 2,
+          "false": 2
+        }
+      }
+    },
+    "test": {
+      "rows": 3491,
+      "label_counts": {
+        "mostly false": 306,
+        "half-true": 304,
+        "unproven": 54,
+        "false": 693,
+        "mixture": 69,
+        "true": 305,
+        "0": 245,
+        "1": 32,
+        "in the works": 13,
+        "fiction!": 157,
+        "mostly true": 309,
+        "none": 116,
+        "legend": 7,
+        "pants on fire!": 160,
+        "not yet rated": 9,
+        "scam": 3,
+        "misleading": 12,
+        "truth! & fiction!": 17,
+        "determination: mostly true": 7,
+        "factscan score: misleading": 3,
+        "compromise": 24,
+        "unproven!": 22,
+        "half flip": 7,
+        "misleading!": 1,
+        "confirmed authorship!": 3,
+        "incorrect": 12,
+        "truth!": 78,
+        "commentary!": 2,
+        "in-between": 22,
+        "mostly truth!": 3,
+        "incorrect attribution!": 3,
+        "promise kept": 56,
+        "in-the-green": 10,
+        "2": 11,
+        "statirical reports": 14,
+        "promise broken": 27,
+        "determination: misleading": 6,
+        "fake news": 9,
+        "full flop": 15,
+        "bogus warning": 22,
+        "10": 2,
+        "truth! & misleading!": 4,
+        "unsubstantiated messages": 5,
+        "factscan score: false": 4,
+        "miscaptioned": 15,
+        "misattributed": 4,
+        "true messages": 30,
+        "authorship confirmed!": 4,
+        "determination: true": 10,
+        "fake": 6,
+        "facebook scams": 48,
+        "verdict: true": 16,
+        "correct": 12,
+        "stalled": 8,
+        "no flip": 3,
+        "mostly fiction!": 8,
+        "3": 4,
+        "verdict: false": 15,
+        "correct attribution": 2,
+        "determination: barely true": 3,
+        "disputed!": 6,
+        "truth! & outdated!": 2,
+        "mostly_true": 3,
+        "determination: false": 13,
+        "not the whole story": 3,
+        "fact": 2,
+        "partially true": 1,
+        "fiction! & satire!": 2,
+        "in-the-red": 11,
+        "spins the facts": 1,
+        "accurate": 3,
+        "misleading recommendations": 3,
+        "verdict: unsubstantiated": 3,
+        "unverified": 1,
+        "mostly-correct": 8,
+        "outdated!": 2,
+        "4 pinnochios": 7,
+        "truth! & disputed!": 1,
+        "3 pinnochios": 4,
+        "verified": 2,
+        "conclusion: accurate": 1,
+        "mostly_false": 1,
+        "no evidence": 1,
+        "distorts the facts": 2,
+        "a little baloney": 1,
+        "unsupported": 3,
+        "factscan score: true": 4,
+        "2 pinnochios": 3,
+        "unobservable": 1,
+        "a lot of baloney": 1,
+        "scam!": 2,
+        "exaggerated": 1,
+        "some baloney": 1,
+        "outdated": 5,
+        "opinion!": 1,
+        "determination: huckster propaganda": 2,
+        "half true": 2,
+        "virus!": 2,
+        "partly true": 1,
+        "truth! & unproven!": 2,
+        "4": 1,
+        "previously truth! now resolved!": 1,
+        "understated": 1,
+        "investigation pending!": 1,
+        "grass roots movement!": 1
+      },
+      "empty_claim_ids": [
+        "vees-00454"
+      ],
+      "missing_metadata_counts": {
+        "claim_url": 0,
+        "reason": 1844,
+        "category": 2258,
+        "speaker": 1713,
+        "checker": 2279,
+        "tags": 3296,
+        "article_title": 1586,
+        "publication_date": 8,
+        "claim_date": 1896,
+        "entities": 2201
+      },
+      "unicode_line_separator_count": 0,
+      "domain_counts": {
+        "pomt": 1538,
+        "snes": 645,
+        "goop": 295,
+        "pose": 137,
+        "tron": 332,
+        "thet": 8,
+        "para": 23,
+        "farg": 42,
+        "vees": 50,
+        "thal": 10,
+        "vogo": 65,
+        "faan": 11,
+        "afck": 43,
+        "abbc": 43,
+        "hoer": 131,
+        "bove": 29,
+        "mpws": 5,
+        "chct": 36,
+        "obry": 7,
+        "wast": 19,
+        "ranz": 2,
+        "peck": 6,
+        "faly": 7,
+        "fani": 1,
+        "huca": 3,
+        "clck": 3
+      },
+      "domain_label_counts": {
+        "abbc": {
+          "in-between": 22,
+          "in-the-green": 10,
+          "in-the-red": 11
+        },
+        "afck": {
+          "incorrect": 11,
+          "correct": 12,
+          "unproven": 7,
+          "mostly-correct": 8,
+          "misleading": 3,
+          "exaggerated": 1,
+          "understated": 1
+        },
+        "bove": {
+          "none": 29
+        },
+        "chct": {
+          "verdict: true": 16,
+          "verdict: false": 15,
+          "verdict: unsubstantiated": 3,
+          "none": 2
+        },
+        "clck": {
+          "unsupported": 1,
+          "misleading": 1,
+          "incorrect": 1
+        },
+        "faan": {
+          "factscan score: misleading": 3,
+          "factscan score: false": 4,
+          "factscan score: true": 4
+        },
+        "faly": {
+          "unverified": 1,
+          "none": 2,
+          "true": 3,
+          "partly true": 1
+        },
+        "fani": {
+          "conclusion: accurate": 1
+        },
+        "farg": {
+          "misleading": 4,
+          "false": 26,
+          "not the whole story": 1,
+          "spins the facts": 1,
+          "none": 5,
+          "no evidence": 1,
+          "distorts the facts": 2,
+          "unsupported": 2
+        },
+        "goop": {
+          "0": 245,
+          "1": 32,
+          "2": 11,
+          "10": 2,
+          "3": 4,
+          "4": 1
+        },
+        "hoer": {
+          "statirical reports": 14,
+          "fake news": 9,
+          "bogus warning": 22,
+          "unsubstantiated messages": 5,
+          "true messages": 30,
+          "facebook scams": 48,
+          "misleading recommendations": 3
+        },
+        "huca": {
+          "a little baloney": 1,
+          "a lot of baloney": 1,
+          "some baloney": 1
+        },
+        "mpws": {
+          "misleading": 1,
+          "false": 1,
+          "accurate": 3
+        },
+        "obry": {
+          "mostly_true": 3,
+          "verified": 2,
+          "mostly_false": 1,
+          "unobservable": 1
+        },
+        "para": {
+          "mostly true": 5,
+          "true": 3,
+          "false": 4,
+          "mostly false": 5,
+          "half-true": 5,
+          "pants on fire!": 1
+        },
+        "peck": {
+          "partially true": 1,
+          "true": 2,
+          "false": 3
+        },
+        "pomt": {
+          "mostly false": 257,
+          "half-true": 299,
+          "false": 289,
+          "mostly true": 285,
+          "pants on fire!": 159,
+          "true": 224,
+          "half flip": 7,
+          "full flop": 15,
+          "no flip": 3
+        },
+        "pose": {
+          "in the works": 13,
+          "not yet rated": 9,
+          "compromise": 24,
+          "promise kept": 56,
+          "promise broken": 27,
+          "stalled": 8
+        },
+        "ranz": {
+          "fact": 2
+        },
+        "snes": {
+          "unproven": 46,
+          "false": 363,
+          "mixture": 69,
+          "true": 73,
+          "legend": 7,
+          "scam": 3,
+          "mostly false": 42,
+          "mostly true": 16,
+          "miscaptioned": 15,
+          "misattributed": 4,
+          "correct attribution": 2,
+          "outdated": 5
+        },
+        "thal": {
+          "none": 5,
+          "mostly true": 2,
+          "mostly false": 1,
+          "unproven": 1,
+          "half true": 1
+        },
+        "thet": {
+          "none": 4,
+          "false": 1,
+          "mostly false": 1,
+          "mostly true": 1,
+          "half true": 1
+        },
+        "tron": {
+          "fiction!": 157,
+          "truth! & fiction!": 17,
+          "unproven!": 22,
+          "misleading!": 1,
+          "confirmed authorship!": 3,
+          "truth!": 78,
+          "commentary!": 2,
+          "mostly truth!": 3,
+          "incorrect attribution!": 3,
+          "none": 7,
+          "truth! & misleading!": 4,
+          "authorship confirmed!": 4,
+          "mostly fiction!": 8,
+          "disputed!": 6,
+          "truth! & outdated!": 2,
+          "fiction! & satire!": 2,
+          "outdated!": 2,
+          "truth! & disputed!": 1,
+          "scam!": 2,
+          "opinion!": 1,
+          "virus!": 2,
+          "truth! & unproven!": 2,
+          "previously truth! now resolved!": 1,
+          "investigation pending!": 1,
+          "grass roots movement!": 1
+        },
+        "vees": {
+          "false": 3,
+          "none": 38,
+          "fake": 6,
+          "misleading": 3
+        },
+        "vogo": {
+          "determination: mostly true": 7,
+          "determination: misleading": 6,
+          "none": 24,
+          "determination: true": 10,
+          "determination: barely true": 3,
+          "determination: false": 13,
+          "determination: huckster propaganda": 2
+        },
+        "wast": {
+          "not the whole story": 2,
+          "4 pinnochios": 7,
+          "3 pinnochios": 4,
+          "false": 3,
+          "2 pinnochios": 3
+        }
+      }
+    }
+  },
+  "duplicate_claim_groups": [
+    {
+      "ids": [
+        "afck-00416",
+        "afck-00340"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "mostly-correct",
+        "unproven"
+      ]
+    },
+    {
+      "ids": [
+        "wast-00194",
+        "wast-00175"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "3 pinnochios"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01221",
+        "tron-01922"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "fiction!"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00464",
+        "hoer-01265"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00243",
+        "farg-00246"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "abbc-00283",
+        "abbc-00271",
+        "abbc-00265"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "in-between"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-05428",
+        "pomt-03096"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "half-true",
+        "mostly false"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-11294",
+        "farg-00452"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false",
+        "pants on fire!"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-04428",
+        "pomt-04427"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-03597",
+        "pomt-03611"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "half-true",
+        "mostly true"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00781",
+        "pose-00761"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "not yet rated"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-00580",
+        "pomt-00512"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01255",
+        "hoer-00454"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01263",
+        "hoer-00463"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01238",
+        "hoer-00439"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00054",
+        "pose-00055"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise kept"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01243",
+        "hoer-00441"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pose-01019",
+        "pose-01020"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise broken"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-11229",
+        "farg-00432"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00143",
+        "pomt-11760"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false",
+        "no evidence"
+      ]
+    },
+    {
+      "ids": [
+        "afck-00404",
+        "afck-00336"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "incorrect",
+        "unproven"
+      ]
+    },
+    {
+      "ids": [
+        "wast-00147",
+        "wast-00164"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "4 pinnochios"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00258",
+        "farg-00264"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "misleading"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-13594",
+        "pomt-13568"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "half flip"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-06376",
+        "pomt-06261"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "true"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-14380",
+        "pomt-14389"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "true"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-04919",
+        "pomt-04705"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "true"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00459",
+        "hoer-01260"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00115",
+        "pomt-11518"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false",
+        "pants on fire!"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01289",
+        "hoer-00634"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-13574",
+        "pomt-15007"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00507",
+        "pose-00506"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "in the works",
+        "promise broken"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00397",
+        "pomt-10967"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00869",
+        "pose-00870"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise kept"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00200",
+        "hoer-00936"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "bogus warning",
+        "misleading recommendations"
+      ]
+    },
+    {
+      "ids": [
+        "pose-01038",
+        "pose-01037"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "promise broken",
+        "promise kept"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-12799",
+        "pomt-12800"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "pose-01256",
+        "pose-01258",
+        "pose-01259"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "in the works",
+        "stalled"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00455",
+        "hoer-01256"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00438",
+        "hoer-01237"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-12667",
+        "wast-00154"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "4 pinnochios",
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-09893",
+        "pomt-09779",
+        "pomt-08494"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00222",
+        "hoer-01163"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "facebook scams"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00291",
+        "farg-00304"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false",
+        "none"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00911",
+        "hoer-00020"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "bogus warning"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-06428",
+        "pomt-06430"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "half-true"
+      ]
+    },
+    {
+      "ids": [
+        "afck-00335",
+        "afck-00412"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "mostly-correct",
+        "understated"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01248",
+        "hoer-00446"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00461",
+        "hoer-01262"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00671",
+        "hoer-01298"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-02828",
+        "pomt-02829",
+        "pomt-02827"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00498",
+        "hoer-01211"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01307",
+        "hoer-00406"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "facebook scams",
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-11514",
+        "farg-00114"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00470",
+        "hoer-01271"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-05349",
+        "pomt-05330"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "full flop",
+        "no flip"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00582",
+        "hoer-01302"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00451",
+        "hoer-01253"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00532",
+        "pose-00533"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise broken"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-05328",
+        "pomt-02534"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "full flop",
+        "half flip"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-11865",
+        "farg-00419"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "mostly false",
+        "none"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00203",
+        "pose-00204"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "compromise"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00780",
+        "pose-00739"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "not yet rated"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00449",
+        "hoer-01251"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01290",
+        "hoer-00588"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01268",
+        "hoer-00467"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01239",
+        "hoer-00440"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00444",
+        "hoer-01247"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01109",
+        "hoer-00293"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "facebook scams"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00048",
+        "hoer-00910"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "bogus warning"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00643",
+        "tron-01438"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "true messages",
+        "truth!"
+      ]
+    },
+    {
+      "ids": [
+        "vees-00399",
+        "vees-00397",
+        "vees-00400"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "none"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-10970",
+        "farg-00429"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false",
+        "pants on fire!"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00447",
+        "hoer-01249"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00923",
+        "tron-03579"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "bogus warning",
+        "fiction!"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-10307",
+        "pomt-10315"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "half flip"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00448",
+        "hoer-01250"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-10097",
+        "pomt-10255"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00457",
+        "hoer-01258"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00103",
+        "hoer-00925"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "bogus warning"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00133",
+        "pose-00134"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise kept"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-02508",
+        "pomt-02507"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "abbc-00122",
+        "abbc-00235"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "in-between",
+        "in-the-green"
+      ]
+    },
+    {
+      "ids": [
+        "pose-01027",
+        "pose-01028"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "promise broken"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00450",
+        "hoer-01252"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00608",
+        "hoer-00924"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "bogus warning",
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-13830",
+        "wast-00221"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "none",
+        "true"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00164",
+        "pose-00163"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise kept"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01153",
+        "hoer-00221"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "facebook scams"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00456",
+        "hoer-01257"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-10286",
+        "pomt-09984"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "half flip",
+        "no flip"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00932",
+        "hoer-00010"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "bogus warning"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00444",
+        "pomt-11312"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "false",
+        "pants on fire!"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00646",
+        "pose-00647"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "compromise",
+        "promise kept"
+      ]
+    },
+    {
+      "ids": [
+        "pose-01045",
+        "pose-01044"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "promise broken"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00009",
+        "hoer-00930"
+      ],
+      "splits": [
+        "train"
+      ],
+      "labels": [
+        "bogus warning"
+      ]
+    },
+    {
+      "ids": [
+        "farg-00426",
+        "pomt-11173"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "false",
+        "pants on fire!"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-14554",
+        "pomt-14409"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "mostly true"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-01295",
+        "hoer-00680"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "labels": [
+        "true messages"
+      ]
+    },
+    {
+      "ids": [
+        "snes-05985",
+        "snes-04569"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "false"
+      ]
+    },
+    {
+      "ids": [
+        "pose-01033",
+        "pose-01034"
+      ],
+      "splits": [
+        "dev",
+        "train"
+      ],
+      "labels": [
+        "promise broken"
+      ]
+    },
+    {
+      "ids": [
+        "afck-00414",
+        "afck-00338"
+      ],
+      "splits": [
+        "dev"
+      ],
+      "labels": [
+        "unproven"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-08198",
+        "pomt-07798"
+      ],
+      "splits": [
+        "dev"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-14903",
+        "pomt-14967"
+      ],
+      "splits": [
+        "dev"
+      ],
+      "labels": [
+        "full flop"
+      ]
+    },
+    {
+      "ids": [
+        "goop-01104",
+        "goop-02028"
+      ],
+      "splits": [
+        "dev",
+        "test"
+      ],
+      "labels": [
+        "0"
+      ]
+    },
+    {
+      "ids": [
+        "hoer-00437",
+        "hoer-01236"
+      ],
+      "splits": [
+        "dev",
+        "test"
+      ],
+      "labels": [
+        "fake news",
+        "statirical reports"
+      ]
+    },
+    {
+      "ids": [
+        "afck-00403",
+        "afck-00349"
+      ],
+      "splits": [
+        "dev",
+        "test"
+      ],
+      "labels": [
+        "correct"
+      ]
+    },
+    {
+      "ids": [
+        "pomt-01002",
+        "pomt-00893"
+      ],
+      "splits": [
+        "test"
+      ],
+      "labels": [
+        "full flop",
+        "half flip"
+      ]
+    },
+    {
+      "ids": [
+        "goop-00688",
+        "goop-02944"
+      ],
+      "splits": [
+        "test"
+      ],
+      "labels": [
+        "0"
+      ]
+    },
+    {
+      "ids": [
+        "pose-00527",
+        "pose-00799"
+      ],
+      "splits": [
+        "test"
+      ],
+      "labels": [
+        "promise broken",
+        "promise kept"
+      ]
+    }
+  ],
+  "cross_split_nonempty_overlap": {
+    "train_dev": 15,
+    "train_test": 21,
+    "dev_test": 3
+  },
+  "replacement_character_ids": [],
+  "normalization": "Claim only; NFC and whitespace; preserve case, punctuation, numbers and negation",
+  "label_policy": "Source-specific strings, including lowercase none; no binary mapping",
+  "duplicate_policy": "Casefold and whitespace-normalized exact text; no semantic near-duplicate check; official splits unchanged",
+  "test_labels": "Positional reference join before processing; equal lengths cannot independently prove semantic alignment",
+  "evidence": "No retrieved evidence corpus in this release",
+  "derived_profile_counts": {
+    "train": 27939,
+    "dev": 3476,
+    "test": 3466
+  },
+  "model_input_exclusions": [
+    {
+      "id": "bove-00197",
+      "split": "train",
+      "reason": "empty_claim",
+      "profiles": "both"
+    },
+    {
+      "id": "hoer-01252",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "snes-04569",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "vees-00410",
+      "split": "dev",
+      "reason": "empty_claim",
+      "profiles": "both"
+    },
+    {
+      "id": "pomt-06261",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-14409",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-01256",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "abbc-00271",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-09984",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00440",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-12800",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pose-01034",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-10315",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00588",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-01251",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00406",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "abbc-00265",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pose-01259",
+      "split": "dev",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "abbc-00235",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pose-00055",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00924",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-02827",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00446",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00680",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-01257",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "goop-02028",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-01271",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "wast-00175",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pose-00204",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "vees-00454",
+      "split": "test",
+      "reason": "empty_claim",
+      "profiles": "both"
+    },
+    {
+      "id": "pomt-11173",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-04705",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "afck-00349",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pose-01028",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-01236",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00010",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-10255",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "afck-00412",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pomt-08494",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "pose-00163",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00936",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00467",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    },
+    {
+      "id": "hoer-00020",
+      "split": "test",
+      "reason": "matches_earlier_split",
+      "profiles": "leakage_controlled"
+    }
+  ],
+  "heldout_domain_label_keys_not_in_train": {
+    "train": [],
+    "dev": [],
+    "test": []
+  },
+  "profile_policy": "Full CSVs preserve every original row/order. Official JSONL keeps original membership/order but excludes empty claims. Derived JSONL also filters heldout text seen in earlier splits (train > dev > test); within-split duplicates remain. No semantic near-duplicate check."
+}

@@ -1,0 +1,75 @@
+{
+  "dataset": "MultiFC",
+  "input_sha256": "92aa1563ae21c14b9bb377b468976f774ae3287c94321f752fd785b28134cb4f",
+  "profiles": {
+    "official": {
+      "train": "official_train.jsonl",
+      "dev": "official_dev.jsonl",
+      "test": "official_test.jsonl"
+    },
+    "leakage_controlled": {
+      "train": "leakage_controlled_train.jsonl",
+      "dev": "leakage_controlled_dev.jsonl",
+      "test": "leakage_controlled_test.jsonl"
+    }
+  },
+  "files": {
+    "train.csv": {
+      "sha256": "c3e241c9fc0cca1b629f3e1d1de85a2fdf82a1402925b6b4d1611b43a8c90772",
+      "bytes": 80810837
+    },
+    "official_train.jsonl": {
+      "sha256": "1c49c6ded37773db1161f91404d8dea649d8228b362ced5cb1dce2b31628673c",
+      "bytes": 8691873
+    },
+    "leakage_controlled_train.jsonl": {
+      "sha256": "1c49c6ded37773db1161f91404d8dea649d8228b362ced5cb1dce2b31628673c",
+      "bytes": 8691873
+    },
+    "dev.csv": {
+      "sha256": "516ca6ea7579e283c29c963a3c21938a5611d762e8f0e92da9322786f32bfc99",
+      "bytes": 9960242
+    },
+    "official_dev.jsonl": {
+      "sha256": "ccc8236c6f102ee35271834fcb78d49e179fe7ab7b7421cf0eb1a36ef3cd76b4",
+      "bytes": 1076722
+    },
+    "leakage_controlled_dev.jsonl": {
+      "sha256": "16b5852647ebfd1a320ad4c7f9db69d03b666045cd48925498d254e829170ba9",
+      "bytes": 1072439
+    },
+    "test.csv": {
+      "sha256": "66efbf887ba2152a73f313cf5c53ab7807f393f3b6cb7f6087da6cbf2a05cf86",
+      "bytes": 9997514
+    },
+    "official_test.jsonl": {
+      "sha256": "799a76f744461eb059e1d2eaebad991436a22b0d3929e6075509855a28ae4fee",
+      "bytes": 1086996
+    },
+    "leakage_controlled_test.jsonl": {
+      "sha256": "6a96287a3aea263e45328fb1fc69de11bbaf1668e2cae087c4697836d3d48401",
+      "bytes": 1079412
+    },
+    "quality_report.json": {
+      "sha256": "b2da559833fa970ee4bc953da32cb48e0327e7d873b8fd2c4f12d41f4907ea47",
+      "bytes": 59360
+    }
+  },
+  "next_stage": {
+    "status": "requires_source_label_model_policy",
+    "feature_text": "text",
+    "target": "label_key",
+    "native_rating": "label",
+    "source_domain": "domain",
+    "binary_mapping": "Not applied. Source-specific mapping must be reviewed separately.",
+    "fit_vocabulary_on": "train only",
+    "test": "evaluation only; never select hyperparameters",
+    "reference_repository": "Derived topic-domain/binary dataset is not this original release"
+  },
+  "schema_version": 2,
+  "complete": true,
+  "created_utc": "2026-10-24T12:29:28.811164+00:00",
+  "output_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing\\output\\multifc",
+  "project_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing",
+  "script_sha256": "1a70aa019e1d9ad98dcd5feb09046d7b88f608ac72a78f21e42f08fac5172939"
+}

@@ -1,0 +1,39 @@
+{
+  "dataset": "FakeNewsAMT",
+  "input_sha256": "649dd52b0378b0f95a68afd4e55cfe8e3c70a6bd9d647e10194ebb69fb562f77",
+  "profiles": {
+    "official": {
+      "unsplit": "model_input.jsonl"
+    }
+  },
+  "files": {
+    "articles.csv": {
+      "sha256": "eda4b486ac54cc1aa04f65a14e05044e4e03e1466ec6afc5a870edcd93ffc435",
+      "bytes": 1119804
+    },
+    "model_input.jsonl": {
+      "sha256": "201b17bbd13ebcc733355cfa30593f0a8545bd2258375eb3cc12731d1a3369a6",
+      "bytes": 418812
+    },
+    "quality_report.json": {
+      "sha256": "4300567a7b69efa1f9f33b76e8439d77f4c76fff72ebf3dfa7066861e4049da7",
+      "bytes": 1076
+    }
+  },
+  "next_stage": {
+    "status": "requires_group_split",
+    "feature_text": "text",
+    "target": "label_id",
+    "group": "group_id",
+    "topic_domain": "domain",
+    "fit_vocabulary_on": "training partition only",
+    "transformer": "Use the chosen model tokenizer; no stemming/stopword deletion",
+    "baseline": "TF-IDF unigram/bigram candidate; fit on training only"
+  },
+  "schema_version": 2,
+  "complete": true,
+  "created_utc": "2026-10-24T12:29:15.729170+00:00",
+  "output_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing\\output\\amt",
+  "project_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing",
+  "script_sha256": "1489bd575b2d84d1a0ba6b59eb7d816d0fca66dcf141fc0844622ad2f2d6b548"
+}
