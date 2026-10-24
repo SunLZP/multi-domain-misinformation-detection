@@ -11,6 +11,11 @@
       "train": "leakage_controlled_train.jsonl",
       "dev": "leakage_controlled_dev.jsonl",
       "test": "leakage_controlled_test.jsonl"
+    },
+    "binary": {
+      "train": "binary_train.jsonl",
+      "dev": "binary_dev.jsonl",
+      "test": "binary_test.jsonl"
     }
   },
   "files": {
@@ -26,6 +31,14 @@
       "sha256": "1c49c6ded37773db1161f91404d8dea649d8228b362ced5cb1dce2b31628673c",
       "bytes": 8691873
     },
+    "binary_train.csv": {
+      "sha256": "6716e6386a0e9c4bfcc38192da86f03956cb38400916886683287ec28bfb5788",
+      "bytes": 4055254
+    },
+    "binary_train.jsonl": {
+      "sha256": "aaee92162c15183213151837ed722b0b56181803987e8e86ac2d63d43e9651e1",
+      "bytes": 6069686
+    },
     "dev.csv": {
       "sha256": "516ca6ea7579e283c29c963a3c21938a5611d762e8f0e92da9322786f32bfc99",
       "bytes": 9960242
@@ -37,6 +50,14 @@
     "leakage_controlled_dev.jsonl": {
       "sha256": "16b5852647ebfd1a320ad4c7f9db69d03b666045cd48925498d254e829170ba9",
       "bytes": 1072439
+    },
+    "binary_dev.csv": {
+      "sha256": "0466570db70f0c9d9aa8a6b0e002299a73cc3fb2eea541c199eb6f87a106a155",
+      "bytes": 500393
+    },
+    "binary_dev.jsonl": {
+      "sha256": "2bdc3c246a1be74f8f3df9122c53c4b0bbd65bebf07db8d77673c1615005d12b",
+      "bytes": 751529
     },
     "test.csv": {
       "sha256": "66efbf887ba2152a73f313cf5c53ab7807f393f3b6cb7f6087da6cbf2a05cf86",
@@ -50,26 +71,43 @@
       "sha256": "6a96287a3aea263e45328fb1fc69de11bbaf1668e2cae087c4697836d3d48401",
       "bytes": 1079412
     },
+    "binary_test.csv": {
+      "sha256": "a81c707db10f39792f81fd1f8e14b6f489ed7ba99e00851bae491eef2e7583ae",
+      "bytes": 503986
+    },
+    "binary_test.jsonl": {
+      "sha256": "9667e88cd6b9795e8fee9e87c6aa27d4f414ee2fa20a3aa7b974cf5f6552132e",
+      "bytes": 753938
+    },
+    "binary_mapping.csv": {
+      "sha256": "80c4c3b7e2fc49c547f1862f1d1ab5b4eef9660049bdcbde777673ecac74ba74",
+      "bytes": 9830
+    },
+    "binary_excluded.csv": {
+      "sha256": "a908fc101899dbe1c24be35e315c98263cf0511ea5badb780b9412deae141930",
+      "bytes": 640977
+    },
     "quality_report.json": {
-      "sha256": "b2da559833fa970ee4bc953da32cb48e0327e7d873b8fd2c4f12d41f4907ea47",
-      "bytes": 59360
+      "sha256": "16769c40400ac3328495b541e7d679043e719a6aa44d0da8d74d21ee10129dc1",
+      "bytes": 67027
     }
   },
   "next_stage": {
-    "status": "requires_source_label_model_policy",
+    "status": "binary_ready",
+    "default_profile": "binary",
     "feature_text": "text",
-    "target": "label_key",
-    "native_rating": "label",
+    "target": "label_id",
+    "native_rating": "original_label",
     "source_domain": "domain",
-    "binary_mapping": "Not applied. Source-specific mapping must be reviewed separately.",
+    "binary_mapping": "source-aware-majority-veracity-v1",
     "fit_vocabulary_on": "train only",
     "test": "evaluation only; never select hyperparameters",
     "reference_repository": "Derived topic-domain/binary dataset is not this original release"
   },
-  "schema_version": 2,
+  "schema_version": 3,
   "complete": true,
-  "created_utc": "2026-10-24T12:29:28.811164+00:00",
-  "output_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing\\output\\multifc",
-  "project_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing",
-  "script_sha256": "1a70aa019e1d9ad98dcd5feb09046d7b88f608ac72a78f21e42f08fac5172939"
+  "created_utc": "2026-10-24T14:07:25.956266+00:00",
+  "output_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing\\output\\multifc",
+  "project_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing",
+  "script_sha256": "b93c6750669317a657c36b80494eafe86f9b2251aad456589a1eff35e908e272"
 }

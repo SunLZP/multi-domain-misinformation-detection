@@ -1,6 +1,6 @@
 {
   "dataset": "MultiFC",
-  "input_path": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\MultiFC_Codalab.zip",
+  "input_path": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\MultiFC_Codalab.zip",
   "input_sha256": "92aa1563ae21c14b9bb377b468976f774ae3287c94321f752fd785b28134cb4f",
   "original_unchanged": true,
   "splits": {
@@ -2533,7 +2533,7 @@
   },
   "replacement_character_ids": [],
   "normalization": "Claim only; NFC and whitespace; preserve case, punctuation, numbers and negation",
-  "label_policy": "Source-specific strings, including lowercase none; no binary mapping",
+  "label_policy": "Native exports retain ratings; binary exports use source-aware 0=real, 1=fake rules",
   "duplicate_policy": "Casefold and whitespace-normalized exact text; no semantic near-duplicate check; official splits unchanged",
   "test_labels": "Positional reference join before processing; equal lengths cannot independently prove semantic alignment",
   "evidence": "No retrieved evidence corpus in this release",
@@ -2807,5 +2807,357 @@
     "dev": [],
     "test": []
   },
-  "profile_policy": "Full CSVs preserve every original row/order. Official JSONL keeps original membership/order but excludes empty claims. Derived JSONL also filters heldout text seen in earlier splits (train > dev > test); within-split duplicates remain. No semantic near-duplicate check."
+  "profile_policy": "Full CSVs preserve every original row/order. Official JSONL keeps original membership/order but excludes empty claims. Derived JSONL also filters heldout text seen in earlier splits (train > dev > test); within-split duplicates remain. No semantic near-duplicate check.",
+  "binary": {
+    "policy": "source-aware-majority-veracity-v1",
+    "meaning": {
+      "0": "real",
+      "1": "fake"
+    },
+    "majority_rating_policy": "mostly true/correct -> real; mostly false/fiction -> fake",
+    "sources": {
+      "africa_check": "https://africacheck.org/how-we-fact-check/how-we-rate-claims",
+      "binary_grouping": "https://misinforeview.hks.harvard.edu/article/fact-checking-fact-checkers-a-data-driven-approach/",
+      "check_your_fact": "https://checkyourfact.com/methodology/",
+      "dataset": "https://aclanthology.org/D19-1475.pdf",
+      "factcheckni": "https://factcheckni.org/articles/news/for-your-consideration-factcheckni-verdict-ratings/",
+      "gossipcop_scale": "https://www.cs.emory.edu/~kshu5/files/FakeNewsNet_big_data.pdf",
+      "politifact": "https://www.politifact.com/article/2018/feb/12/principles-truth-o-meter-politifacts-methodology-i/",
+      "truth_or_fiction": "https://www.truthorfiction.com/fact-check-ratings/",
+      "voice_of_san_diego": "https://voiceofsandiego.org/category/fact/"
+    },
+    "original_rows": 34924,
+    "retained_rows": 24489,
+    "retained_percent": 70.12,
+    "original_domains": 26,
+    "retained_domains": [
+      "afck",
+      "bove",
+      "chct",
+      "clck",
+      "faan",
+      "faly",
+      "fani",
+      "farg",
+      "goop",
+      "hoer",
+      "mpws",
+      "obry",
+      "para",
+      "peck",
+      "pomt",
+      "ranz",
+      "snes",
+      "thal",
+      "thet",
+      "tron",
+      "vees",
+      "vogo",
+      "wast"
+    ],
+    "excluded_domains": [
+      "abbc",
+      "huca",
+      "pose"
+    ],
+    "exclusion_counts": {
+      "mixed_or_partial_truth": 4258,
+      "non_veracity_promise_or_position": 1606,
+      "unknown_or_insufficient_evidence": 2126,
+      "outside_reviewed_binary_rules": 2342,
+      "time_dependent_rating": 79,
+      "empty_claim": 3,
+      "matches_earlier_split": 21
+    },
+    "splits": {
+      "train": {
+        "rows": 19610,
+        "label_counts": {
+          "0": 6342,
+          "1": 13268
+        },
+        "domain_label_counts": {
+          "afck": {
+            "1": 86,
+            "0": 158
+          },
+          "bove": {
+            "1": 5
+          },
+          "chct": {
+            "0": 125,
+            "1": 124
+          },
+          "clck": {
+            "1": 11
+          },
+          "faan": {
+            "1": 35,
+            "0": 28
+          },
+          "faly": {
+            "0": 23,
+            "1": 5
+          },
+          "fani": {
+            "0": 8,
+            "1": 5
+          },
+          "farg": {
+            "1": 206
+          },
+          "goop": {
+            "1": 1963,
+            "0": 14
+          },
+          "hoer": {
+            "1": 245,
+            "0": 242
+          },
+          "mpws": {
+            "0": 20,
+            "1": 9
+          },
+          "obry": {
+            "0": 35,
+            "1": 5
+          },
+          "para": {
+            "0": 58,
+            "1": 76
+          },
+          "peck": {
+            "1": 27,
+            "0": 20
+          },
+          "pomt": {
+            "0": 4068,
+            "1": 5660
+          },
+          "ranz": {
+            "0": 12,
+            "1": 5
+          },
+          "snes": {
+            "1": 3243,
+            "0": 715
+          },
+          "thal": {
+            "1": 17,
+            "0": 20
+          },
+          "thet": {
+            "0": 12,
+            "1": 13
+          },
+          "tron": {
+            "1": 1312,
+            "0": 649
+          },
+          "vees": {
+            "1": 75
+          },
+          "vogo": {
+            "0": 135,
+            "1": 121
+          },
+          "wast": {
+            "1": 20
+          }
+        }
+      },
+      "dev": {
+        "rows": 2445,
+        "label_counts": {
+          "1": 1652,
+          "0": 793
+        },
+        "domain_label_counts": {
+          "afck": {
+            "1": 11,
+            "0": 20
+          },
+          "bove": {
+            "1": 1
+          },
+          "chct": {
+            "1": 15,
+            "0": 16
+          },
+          "clck": {
+            "1": 1
+          },
+          "faan": {
+            "1": 4,
+            "0": 4
+          },
+          "faly": {
+            "0": 3
+          },
+          "fani": {
+            "0": 1
+          },
+          "farg": {
+            "1": 26
+          },
+          "goop": {
+            "0": 2,
+            "1": 245
+          },
+          "hoer": {
+            "1": 27,
+            "0": 29
+          },
+          "mpws": {
+            "0": 3,
+            "1": 1
+          },
+          "obry": {
+            "0": 5,
+            "1": 1
+          },
+          "para": {
+            "0": 8,
+            "1": 10
+          },
+          "peck": {
+            "1": 3,
+            "0": 2
+          },
+          "pomt": {
+            "0": 507,
+            "1": 708
+          },
+          "ranz": {
+            "0": 2
+          },
+          "snes": {
+            "1": 404,
+            "0": 89
+          },
+          "thal": {
+            "0": 2,
+            "1": 2
+          },
+          "thet": {
+            "0": 2,
+            "1": 2
+          },
+          "tron": {
+            "1": 165,
+            "0": 81
+          },
+          "vees": {
+            "1": 9
+          },
+          "vogo": {
+            "0": 17,
+            "1": 15
+          },
+          "wast": {
+            "1": 2
+          }
+        }
+      },
+      "test": {
+        "rows": 2434,
+        "label_counts": {
+          "1": 1643,
+          "0": 791
+        },
+        "domain_label_counts": {
+          "afck": {
+            "1": 11,
+            "0": 18
+          },
+          "bove": {},
+          "chct": {
+            "0": 16,
+            "1": 15
+          },
+          "clck": {
+            "1": 1
+          },
+          "faan": {
+            "1": 4,
+            "0": 4
+          },
+          "faly": {
+            "0": 3
+          },
+          "fani": {
+            "0": 1
+          },
+          "farg": {
+            "1": 26
+          },
+          "goop": {
+            "1": 244,
+            "0": 2
+          },
+          "hoer": {
+            "1": 24,
+            "0": 29
+          },
+          "mpws": {
+            "1": 1,
+            "0": 3
+          },
+          "obry": {
+            "0": 5,
+            "1": 1
+          },
+          "para": {
+            "0": 8,
+            "1": 10
+          },
+          "peck": {
+            "0": 2,
+            "1": 3
+          },
+          "pomt": {
+            "1": 703,
+            "0": 508
+          },
+          "ranz": {
+            "0": 2
+          },
+          "snes": {
+            "1": 405,
+            "0": 89
+          },
+          "thal": {
+            "0": 2,
+            "1": 1
+          },
+          "thet": {
+            "1": 2,
+            "0": 1
+          },
+          "tron": {
+            "1": 165,
+            "0": 81
+          },
+          "vees": {
+            "1": 9
+          },
+          "vogo": {
+            "0": 17,
+            "1": 15
+          },
+          "wast": {
+            "1": 3
+          }
+        }
+      }
+    },
+    "single_class_train_domains": [
+      "bove",
+      "clck",
+      "farg",
+      "vees",
+      "wast"
+    ],
+    "domain_caveat": "Source codes are fact-checking websites, not topics; retained sources may have only one class or no test rows"
+  }
 }

@@ -1,0 +1,161 @@
+﻿domain,original_label,action,label_id,reason,train,dev,test
+abbc,in-between,exclude,,mixed_or_partial_truth,176,22,22
+abbc,in-the-green,exclude,,outside_reviewed_binary_rules,83,10,10
+abbc,in-the-red,exclude,,outside_reviewed_binary_rules,91,11,11
+afck,correct,keep,0,explicit_source_rule,96,12,12
+afck,exaggerated,exclude,,outside_reviewed_binary_rules,6,1,1
+afck,incorrect,keep,1,explicit_source_rule,86,11,11
+afck,misleading,exclude,,outside_reviewed_binary_rules,26,3,3
+afck,mostly-correct,keep,0,explicit_source_rule,62,8,8
+afck,understated,exclude,,outside_reviewed_binary_rules,12,1,1
+afck,unproven,exclude,,unknown_or_insufficient_evidence,59,7,7
+bove,none,exclude,,unknown_or_insufficient_evidence,231,29,29
+bove,rating: false,keep,1,explicit_source_rule,5,1,0
+chct,none,exclude,,unknown_or_insufficient_evidence,15,2,2
+chct,verdict: false,keep,1,explicit_source_rule,124,15,15
+chct,verdict: true,keep,0,explicit_source_rule,125,16,16
+chct,verdict: unsubstantiated,exclude,,unknown_or_insufficient_evidence,20,2,3
+clck,incorrect,keep,1,explicit_source_rule,11,1,1
+clck,misleading,exclude,,outside_reviewed_binary_rules,4,1,1
+clck,unsupported,exclude,,unknown_or_insufficient_evidence,5,1,1
+faan,factscan score: false,keep,1,explicit_source_rule,35,4,4
+faan,factscan score: misleading,exclude,,outside_reviewed_binary_rules,26,3,3
+faan,factscan score: true,keep,0,explicit_source_rule,28,4,4
+faly,false,keep,1,explicit_source_rule,5,0,0
+faly,none,exclude,,unknown_or_insufficient_evidence,18,2,2
+faly,partly true,exclude,,mixed_or_partial_truth,6,1,1
+faly,true,keep,0,explicit_source_rule,23,3,3
+faly,unverified,exclude,,unknown_or_insufficient_evidence,5,1,1
+fani,conclusion: accurate,keep,0,explicit_source_rule,8,1,1
+fani,conclusion: false,keep,1,explicit_source_rule,5,0,0
+fani,conclusion: unclear,exclude,,unknown_or_insufficient_evidence,5,0,0
+farg,cherry picks,exclude,,outside_reviewed_binary_rules,2,0,0
+farg,distorts the facts,exclude,,outside_reviewed_binary_rules,12,2,2
+farg,exaggerates,exclude,,outside_reviewed_binary_rules,4,0,0
+farg,false,keep,1,explicit_source_rule,206,26,26
+farg,misleading,exclude,,outside_reviewed_binary_rules,31,4,4
+farg,no evidence,exclude,,unknown_or_insufficient_evidence,6,1,1
+farg,none,exclude,,unknown_or_insufficient_evidence,42,5,5
+farg,not the whole story,exclude,,outside_reviewed_binary_rules,5,1,1
+farg,spins the facts,exclude,,outside_reviewed_binary_rules,6,1,1
+farg,unsupported,exclude,,unknown_or_insufficient_evidence,12,1,2
+goop,0,keep,1,explicit_source_rule,1963,245,245
+goop,1,exclude,,outside_reviewed_binary_rules,253,32,32
+goop,10,keep,0,explicit_source_rule,14,2,2
+goop,2,exclude,,outside_reviewed_binary_rules,92,11,11
+goop,3,exclude,,outside_reviewed_binary_rules,28,4,4
+goop,4,exclude,,outside_reviewed_binary_rules,4,0,1
+hoer,bogus warning,keep,1,explicit_source_rule,177,22,22
+hoer,facebook scams,exclude,,outside_reviewed_binary_rules,384,48,48
+hoer,fake news,keep,1,explicit_source_rule,68,8,9
+hoer,misleading recommendations,exclude,,outside_reviewed_binary_rules,22,3,3
+hoer,statirical reports,exclude,,outside_reviewed_binary_rules,112,14,14
+hoer,true messages,keep,0,explicit_source_rule,242,30,30
+hoer,unsubstantiated messages,exclude,,unknown_or_insufficient_evidence,44,5,5
+huca,a little baloney,exclude,,outside_reviewed_binary_rules,10,1,1
+huca,a lot of baloney,exclude,,outside_reviewed_binary_rules,11,1,1
+huca,some baloney,exclude,,outside_reviewed_binary_rules,7,1,1
+mpws,accurate,keep,0,explicit_source_rule,20,3,3
+mpws,false,keep,1,explicit_source_rule,9,1,1
+mpws,misleading,exclude,,outside_reviewed_binary_rules,8,1,1
+obry,mostly_false,keep,1,explicit_source_rule,5,1,1
+obry,mostly_true,keep,0,explicit_source_rule,21,3,3
+obry,unobservable,exclude,,unknown_or_insufficient_evidence,5,1,1
+obry,verified,keep,0,explicit_source_rule,14,2,2
+para,false,keep,1,explicit_source_rule,29,4,4
+para,half flip,exclude,,non_veracity_promise_or_position,5,1,0
+para,half-true,exclude,,mixed_or_partial_truth,36,5,5
+para,mostly false,keep,1,explicit_source_rule,40,5,5
+para,mostly true,keep,0,explicit_source_rule,38,5,5
+para,pants on fire!,keep,1,explicit_source_rule,7,1,1
+para,true,keep,0,explicit_source_rule,20,3,3
+peck,false,keep,1,explicit_source_rule,27,3,3
+peck,partially true,exclude,,mixed_or_partial_truth,6,1,1
+peck,true,keep,0,explicit_source_rule,20,2,2
+pomt,false,keep,1,explicit_source_rule,2325,291,289
+pomt,full flop,exclude,,non_veracity_promise_or_position,118,15,15
+pomt,half flip,exclude,,non_veracity_promise_or_position,52,7,7
+pomt,half-true,exclude,,mixed_or_partial_truth,2394,299,299
+pomt,mostly false,keep,1,explicit_source_rule,2055,257,257
+pomt,mostly true,keep,0,explicit_source_rule,2277,285,285
+pomt,no flip,exclude,,non_veracity_promise_or_position,20,2,3
+pomt,pants on fire!,keep,1,explicit_source_rule,1280,160,159
+pomt,true,keep,0,explicit_source_rule,1791,224,224
+pose,compromise,exclude,,non_veracity_promise_or_position,188,23,24
+pose,in the works,exclude,,non_veracity_promise_or_position,104,13,13
+pose,not yet rated,exclude,,non_veracity_promise_or_position,74,9,9
+pose,promise broken,exclude,,non_veracity_promise_or_position,218,27,27
+pose,promise kept,exclude,,non_veracity_promise_or_position,445,56,56
+pose,stalled,exclude,,non_veracity_promise_or_position,60,7,8
+ranz,fact,keep,0,explicit_source_rule,12,2,2
+ranz,fiction,keep,1,explicit_source_rule,5,0,0
+snes,correct attribution,exclude,,outside_reviewed_binary_rules,17,2,2
+snes,false,keep,1,explicit_source_rule,2903,363,363
+snes,legend,exclude,,outside_reviewed_binary_rules,52,7,7
+snes,misattributed,exclude,,outside_reviewed_binary_rules,29,4,4
+snes,miscaptioned,exclude,,outside_reviewed_binary_rules,122,15,15
+snes,mixture,exclude,,mixed_or_partial_truth,556,70,69
+snes,mostly false,keep,1,explicit_source_rule,340,42,42
+snes,mostly true,keep,0,explicit_source_rule,129,16,16
+snes,outdated,exclude,,time_dependent_rating,40,5,5
+snes,scam,exclude,,outside_reviewed_binary_rules,25,3,3
+snes,true,keep,0,explicit_source_rule,586,73,73
+snes,unproven,exclude,,unknown_or_insufficient_evidence,365,46,46
+thal,half true,exclude,,mixed_or_partial_truth,6,1,1
+thal,mostly false,keep,1,explicit_source_rule,12,1,1
+thal,mostly true,keep,0,explicit_source_rule,20,2,2
+thal,none,exclude,,unknown_or_insufficient_evidence,40,5,5
+thal,unproven,exclude,,unknown_or_insufficient_evidence,8,1,1
+thal,we rate this claim false,keep,1,explicit_source_rule,5,1,0
+thet,false,keep,1,explicit_source_rule,5,1,1
+thet,half true,exclude,,mixed_or_partial_truth,6,1,1
+thet,mostly false,keep,1,explicit_source_rule,8,1,1
+thet,mostly true,keep,0,explicit_source_rule,7,1,1
+thet,none,exclude,,unknown_or_insufficient_evidence,31,4,4
+thet,true,keep,0,explicit_source_rule,5,1,0
+tron,authorship confirmed!,exclude,,outside_reviewed_binary_rules,30,4,4
+tron,commentary!,exclude,,outside_reviewed_binary_rules,19,2,2
+tron,confirmed authorship!,exclude,,outside_reviewed_binary_rules,20,2,3
+tron,correct attribution!,exclude,,outside_reviewed_binary_rules,5,1,0
+tron,disputed!,exclude,,unknown_or_insufficient_evidence,49,6,6
+tron,fiction!,keep,1,explicit_source_rule,1252,157,157
+tron,fiction! & satire!,exclude,,mixed_or_partial_truth,14,2,2
+tron,grass roots movement!,exclude,,outside_reviewed_binary_rules,4,1,1
+tron,inaccurate attribution!,exclude,,outside_reviewed_binary_rules,5,0,0
+tron,incorrect attribution!,exclude,,outside_reviewed_binary_rules,20,3,3
+tron,investigation pending!,exclude,,unknown_or_insufficient_evidence,11,1,1
+tron,misleading!,exclude,,outside_reviewed_binary_rules,12,1,1
+tron,mostly fiction!,keep,1,explicit_source_rule,60,8,8
+tron,mostly truth!,keep,0,explicit_source_rule,26,3,3
+tron,none,exclude,,unknown_or_insufficient_evidence,57,7,7
+tron,opinion!,exclude,,outside_reviewed_binary_rules,7,1,1
+tron,outdated!,exclude,,time_dependent_rating,16,2,2
+tron,previously truth! now resolved!,exclude,,time_dependent_rating,7,1,1
+tron,scam!,exclude,,outside_reviewed_binary_rules,17,2,2
+tron,truth!,keep,0,explicit_source_rule,623,78,78
+tron,truth! & disputed!,exclude,,mixed_or_partial_truth,4,1,1
+tron,truth! & fiction!,exclude,,mixed_or_partial_truth,137,17,17
+tron,truth! & misleading!,exclude,,mixed_or_partial_truth,35,4,4
+tron,truth! & outdated!,exclude,,mixed_or_partial_truth,15,2,2
+tron,truth! & unproven!,exclude,,mixed_or_partial_truth,12,2,2
+tron,unproven!,exclude,,unknown_or_insufficient_evidence,176,22,22
+tron,virus!,exclude,,outside_reviewed_binary_rules,15,2,2
+vees,fake,keep,1,explicit_source_rule,52,6,6
+vees,false,keep,1,explicit_source_rule,23,3,3
+vees,misleading,exclude,,outside_reviewed_binary_rules,27,3,3
+vees,none,exclude,,unknown_or_insufficient_evidence,302,38,38
+vogo,determination: a stretch,exclude,,outside_reviewed_binary_rules,5,1,0
+vogo,determination: barely true,exclude,,outside_reviewed_binary_rules,22,3,3
+vogo,determination: false,keep,1,explicit_source_rule,101,13,13
+vogo,determination: huckster propaganda,keep,1,explicit_source_rule,20,2,2
+vogo,determination: misleading,exclude,,outside_reviewed_binary_rules,45,6,6
+vogo,determination: mostly true,keep,0,explicit_source_rule,55,7,7
+vogo,determination: true,keep,0,explicit_source_rule,80,10,10
+vogo,none,exclude,,unknown_or_insufficient_evidence,194,24,24
+wast,2 pinnochios,exclude,,outside_reviewed_binary_rules,28,3,3
+wast,3 pinnochios,exclude,,outside_reviewed_binary_rules,36,4,4
+wast,4 pinnochios,exclude,,outside_reviewed_binary_rules,53,7,7
+wast,false,keep,1,explicit_source_rule,20,2,3
+wast,needs context,exclude,,outside_reviewed_binary_rules,5,1,0
+wast,none,exclude,,unknown_or_insufficient_evidence,5,0,0
+wast,not the whole story,exclude,,outside_reviewed_binary_rules,16,2,2

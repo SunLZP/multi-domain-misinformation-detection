@@ -13,7 +13,7 @@
     "sports": 80,
     "technology": 80
   },
-  "input_path": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\fakeNewsAMTDatasets.zip",
+  "input_path": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\fakeNewsAMTDatasets.zip",
   "input_sha256": "649dd52b0378b0f95a68afd4e55cfe8e3c70a6bd9d647e10194ebb69fb562f77",
   "original_unchanged": true,
   "replacement_character_ids": [
@@ -33,5 +33,32 @@
     "fake": 1
   },
   "group_policy": "Filename topic/number identifies candidate pairs, not manually verified semantic pairs; keep groups together in any later split.",
-  "celebrity": "Excluded; separate collection"
+  "celebrity": "Excluded; separate collection",
+  "binary": {
+    "meaning": {
+      "0": "real",
+      "1": "fake"
+    },
+    "rows": 480,
+    "original_label": "Original legit/fake rating is retained separately",
+    "label_counts": {
+      "1": 240,
+      "0": 240
+    }
+  },
+  "derived_split": {
+    "seed": 42,
+    "ratios": [
+      0.8,
+      0.1,
+      0.1
+    ],
+    "counts": {
+      "train": 384,
+      "dev": 48,
+      "test": 48
+    },
+    "official": false,
+    "method": "32/4/4 filename pairs per topic"
+  }
 }

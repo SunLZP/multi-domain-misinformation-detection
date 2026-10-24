@@ -4,6 +4,19 @@
   "profiles": {
     "official": {
       "unsplit": "model_input.jsonl"
+    },
+    "binary": {
+      "unsplit": "binary.jsonl"
+    },
+    "grouped": {
+      "train": "grouped_train.jsonl",
+      "dev": "grouped_dev.jsonl",
+      "test": "grouped_test.jsonl"
+    },
+    "binary_grouped": {
+      "train": "binary_train.jsonl",
+      "dev": "binary_dev.jsonl",
+      "test": "binary_test.jsonl"
     }
   },
   "files": {
@@ -15,13 +28,60 @@
       "sha256": "201b17bbd13ebcc733355cfa30593f0a8545bd2258375eb3cc12731d1a3369a6",
       "bytes": 418812
     },
+    "binary.csv": {
+      "sha256": "3197f426b2ba35914bca6df067f0bf33265fd2233dc303a2718dba76f565259a",
+      "bytes": 379908
+    },
+    "binary.jsonl": {
+      "sha256": "9d51f68e430b0ee49a274ad534714590d0345919986640828516a51c01b6c474",
+      "bytes": 428892
+    },
     "quality_report.json": {
-      "sha256": "4300567a7b69efa1f9f33b76e8439d77f4c76fff72ebf3dfa7066861e4049da7",
-      "bytes": 1076
+      "sha256": "21945eeacfc47ac6a6b63ce4b8f86e346f02bdbb534101ac23081d477e340fed",
+      "bytes": 1584
+    },
+    "grouped_train.jsonl": {
+      "sha256": "304f658020ecfd1c4b545415b8085bdca3ee6f7b84749963025fd649d8f45974",
+      "bytes": 333728
+    },
+    "binary_train.csv": {
+      "sha256": "d4deac347ba8ce496f933f8fa43df480748883f7238a4b4a8b21ba4d423b34d1",
+      "bytes": 302616
+    },
+    "binary_train.jsonl": {
+      "sha256": "a20017fea36370234dc95f2301e58575fb8242fa06a13157493cdae2d267f7b4",
+      "bytes": 341792
+    },
+    "grouped_dev.jsonl": {
+      "sha256": "c534b91620dbb79845681e59ce62b2b3c3a782245eed701880c6cd0c50bd07f0",
+      "bytes": 41646
+    },
+    "binary_dev.csv": {
+      "sha256": "2e73a9714986f4dddaf3c58367776da2a9b32bdcb86daac1f4e23daac3e7fbed",
+      "bytes": 37814
+    },
+    "binary_dev.jsonl": {
+      "sha256": "4386f40f0fb57ff8a60c56f80e0c6148b2086fc4997b7f4b6b736ad5011aa7ad",
+      "bytes": 42654
+    },
+    "grouped_test.jsonl": {
+      "sha256": "cbbc0e89f66ed0127a1368c6458cbf77873466ab4ca95af65afa6e01426b2b1b",
+      "bytes": 42334
+    },
+    "binary_test.csv": {
+      "sha256": "eb2f5d895fbaf0ccd49dbfc9343bcd7c1bf66c7b0453ef001c07ffbb75814f83",
+      "bytes": 38502
+    },
+    "binary_test.jsonl": {
+      "sha256": "28902f58944d292f494cb3c4c56ca1ec575e2df2a5402fbef18c6ccecb2d5243",
+      "bytes": 43342
     }
   },
   "next_stage": {
-    "status": "requires_group_split",
+    "status": "binary_grouped_ready",
+    "default_profile": "binary",
+    "split_profile": "binary_grouped",
+    "native_rating": "original_label",
     "feature_text": "text",
     "target": "label_id",
     "group": "group_id",
@@ -30,10 +90,10 @@
     "transformer": "Use the chosen model tokenizer; no stemming/stopword deletion",
     "baseline": "TF-IDF unigram/bigram candidate; fit on training only"
   },
-  "schema_version": 2,
+  "schema_version": 3,
   "complete": true,
-  "created_utc": "2026-10-24T12:29:15.729170+00:00",
-  "output_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing\\output\\amt",
-  "project_directory": "C:\\Users\\yiwen\\OneDrive\\Documents\\NTU\\EE6405 Project\\preprocessing",
-  "script_sha256": "1489bd575b2d84d1a0ba6b59eb7d816d0fca66dcf141fc0844622ad2f2d6b548"
+  "created_utc": "2026-10-24T14:07:17.981754+00:00",
+  "output_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing\\output\\amt",
+  "project_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing",
+  "script_sha256": "ecf62fddfa92d64f0cfaf9c1056d92359dc1d357622c445c3ac0da9972128c2b"
 }

@@ -6,7 +6,6 @@ import uuid
 from datetime import datetime, timezone
 import csv
 import hashlib
-import io
 import json
 import re
 import sys
@@ -36,6 +35,16 @@ def find_input(filename):
     return matches[0]
 
 
+BINARY_FIELDS = ["id", "text", "label", "label_id", "original_label", "domain", "group_id", "split"]
+
+
+def binary_record(row):
+    target = {"legit": 0, "fake": 1}[row["label"]]
+    return {"id": row["id"], "text": row["text"], "label": target, "label_id": target,
+            "original_label": row["label"], "domain": row["domain"],
+            "group_id": row["group_id"], "split": row["split"]}
+
+
 def clean(text):
     # Preserve case, punctuation, numbers, stopwords and negation.
     return " ".join(unicodedata.normalize("NFC", text).split())
@@ -46,7 +55,7 @@ def key(text):
 
 
 def checked_zip(source):
-    archive = zipfile.ZipFile(source)
+    archive = zipfile.ZipFile(source, mode="r")
     bad = archive.testzip()
     if bad:
         archive.close()
@@ -146,7 +155,7 @@ def write_jsonl(path, rows):
 
 def verify_manifest(path):
     manifest = json.loads(path.read_text(encoding="utf-8"))
-    if manifest.get("schema_version") != 2 or not manifest.get("complete"):
+    if manifest.get("schema_version") not in (2, 3) or not manifest.get("complete"):
         raise ValueError(f"Incomplete or incompatible manifest: {path}")
     for name, expected in manifest["files"].items():
         target = (path.parent / name).resolve()
@@ -157,7 +166,7 @@ def verify_manifest(path):
     return manifest
 
 
-def load_preprocessed(profile="official", output_dir=None):
+def load_preprocessed(profile="binary", output_dir=None):
     """Next-stage API: return {split: records} after verifying completed output hashes.
 
     Example: import preprocess_amt; data = preprocess_amt.load_preprocessed()
@@ -175,7 +184,7 @@ def load_preprocessed(profile="official", output_dir=None):
         raise ValueError("No verified completed output. Run this preprocessing script first.")
     _, directory, manifest = max(valid, key=lambda item: item[0])
     if profile not in manifest["profiles"]:
-        raise ValueError(f"Unavailable profile {profile!r}; choose {list(manifest['profiles'])}")
+        raise ValueError(f"Unavailable profile {profile!r}; rerun preprocessing to generate it. Available: {list(manifest['profiles'])}")
     result = {}
     for split, relative in manifest["profiles"][profile].items():
         with (directory / relative).open(encoding="utf-8") as handle:
@@ -183,11 +192,14 @@ def load_preprocessed(profile="official", output_dir=None):
     return result
 
 
-def publish_outputs(requested, producer):
+def publish_outputs(requested, producer, source):
     """Probe actual writes, recover once outside the project, commit manifest last."""
     failures = []
     destinations = [requested.resolve(), fallback_output(DATASET).resolve()]
     for output in dict.fromkeys(destinations):
+        # A source archive may never be inside a destination we publish into.
+        if source.resolve().is_relative_to(output):
+            raise ValueError("Output folder must not contain the source ZIP; choose a separate results folder")
         try:
             output.mkdir(parents=True, exist_ok=True)
             probe = output / f".write-test-{uuid.uuid4().hex}"
@@ -201,7 +213,7 @@ def publish_outputs(requested, producer):
             if marker.exists():
                 marker.unlink()
             manifest = producer(output)
-            manifest.update(schema_version=2, complete=True,
+            manifest.update(schema_version=3, complete=True,
                             created_utc=datetime.now(timezone.utc).isoformat(),
                             output_directory=str(output), project_directory=str(ROOT),
                             script_sha256=sha256(Path(__file__)))
@@ -224,13 +236,9 @@ def file_manifest(output, names):
 
 
 def model_record(row):
-    # Only these fields enter the handoff; no fact-check verdict explanations/titles.
-    result = {field: row[field] for field in ["id", "text", "label", "domain", "group_id", "split"]}
-    if DATASET == "amt":
-        result["label_id"] = row["label_id"]
-    else:
-        result["label_key"] = row["domain"] + "::" + row["label"]
-    return result
+    # Native-label audit profile; use binary_record for the default handoff.
+    return {field: row[field] for field in
+            ["id", "text", "label", "domain", "group_id", "split", "label_id"]}
 
 
 def main():
@@ -289,8 +297,16 @@ def main():
     def produce(output):
         csv_roundtrip(output / "articles.csv", rows, FIELDS)
         write_jsonl(output / "model_input.jsonl", [model_record(row) for row in rows])
-        profiles = {"official": {"unsplit": "model_input.jsonl"}}
-        names = ["articles.csv", "model_input.jsonl", "quality_report.json"]
+        binary = [binary_record(row) for row in rows]
+        check(all(type(r["label"]) is int and r["label"] == r["label_id"] and r["label"] in (0, 1)
+                  for r in binary), "Binary labels are integers 0=real, 1=fake")
+        csv_roundtrip(output / "binary.csv", binary, BINARY_FIELDS)
+        write_jsonl(output / "binary.jsonl", binary)
+        profiles = {"official": {"unsplit": "model_input.jsonl"}, "binary": {"unsplit": "binary.jsonl"}}
+        names = ["articles.csv", "model_input.jsonl", "binary.csv", "binary.jsonl", "quality_report.json"]
+        report["binary"] = dict(meaning={"0": "real", "1": "fake"}, rows=len(binary),
+                                original_label="Original legit/fake rating is retained separately",
+                                label_counts=dict(Counter(r["label_id"] for r in binary)))
         if args.make_splits:
             assignments = {}
             rng = random.Random(args.seed)
@@ -300,6 +316,7 @@ def main():
                 for index, group in enumerate(groups):
                     assignments[group] = "train" if index < 32 else "dev" if index < 36 else "test"
             profiles["grouped"] = {}
+            profiles["binary_grouped"] = {}
             for split in ("train", "dev", "test"):
                 selected = [dict(model_record(row), split=split) for row in rows
                             if assignments[row["group_id"]] == split]
@@ -307,6 +324,18 @@ def main():
                 write_jsonl(output / name, selected)
                 profiles["grouped"][split] = name
                 names.append(name)
+                binary_selected = [dict(binary_record(row), split=split) for row in rows
+                                   if assignments[row["group_id"]] == split]
+                check(len(binary_selected) == {"train": 384, "dev": 48, "test": 48}[split],
+                      f"{split}: expected binary AMT split count")
+                for suffix in ("csv", "jsonl"):
+                    binary_name = f"binary_{split}.{suffix}"
+                    if suffix == "csv":
+                        csv_roundtrip(output / binary_name, binary_selected, BINARY_FIELDS)
+                    else:
+                        write_jsonl(output / binary_name, binary_selected)
+                        profiles["binary_grouped"][split] = binary_name
+                    names.append(binary_name)
             check(len(assignments) == 240, "240 AMT groups assigned exactly once")
             report["derived_split"] = dict(seed=args.seed, ratios=[0.8, 0.1, 0.1],
                                           counts=dict(train=384, dev=48, test=48),
@@ -315,13 +344,16 @@ def main():
         check(before == sha256(args.input), "Original ZIP unchanged after saving results")
         return dict(dataset="FakeNewsAMT", input_sha256=before, profiles=profiles,
                     files=file_manifest(output, names),
-                    next_stage={"status": "grouped_profile_ready" if args.make_splits else "requires_group_split",
+                    next_stage={"status": "binary_grouped_ready" if args.make_splits else "requires_group_split",
+                                "default_profile": "binary", "split_profile": "binary_grouped" if args.make_splits else None,
+                                "native_rating": "original_label",
                                 "feature_text": "text", "target": "label_id", "group": "group_id",
                                 "topic_domain": "domain", "fit_vocabulary_on": "training partition only",
                                 "transformer": "Use the chosen model tokenizer; no stemming/stopword deletion",
                                 "baseline": "TF-IDF unigram/bigram candidate; fit on training only"})
-    publish_outputs(args.output_dir, produce)
-    print("No training performed. AMT split exports are optional; review warnings before modeling.")
+    publish_outputs(args.output_dir, produce, args.input)
+    print("[BINARY] 480 articles; real=240, fake=240. Use binary.csv or load_preprocessed().")
+    print("No training performed. Use --make-splits for binary_grouped train/dev/test; default AMT is unsplit.")
 
 
 if __name__ == "__main__":

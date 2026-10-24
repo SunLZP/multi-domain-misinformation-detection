@@ -1,9 +1,11 @@
-# EE6405 — preprocessing and the next-stage handoff
+# EE6405 — preprocessing
 
-Only two preprocessing scripts. Python 3.10+ and no pip packages. Keep your existing layout:
+Two standalone scripts; Python 3.10+ and no pip packages. The source ZIPs are opened read-only, never extracted or edited. SHA-256 checks verify they remain unchanged.
+
+## Layout and running
 
 ```text
-EE6405 Project/
+multi-domain-misinformation-detection/
   fakeNewsAMTDatasets.zip
   MultiFC_Codalab.zip
   preprocessing/
@@ -12,86 +14,81 @@ EE6405 Project/
     run_preprocessing.cmd
     README.md
     PREPROCESSING_NOTES.md
+    output/                  # generated
 ```
 
-## Run
-
-In VS Code Terminal, go into the folder containing the code:
+Open the repository folder in VS Code. In its PowerShell terminal:
 
 ```powershell
-cd "C:\Users\yiwen\OneDrive\Documents\NTU\EE6405 Project\preprocessing"
-.\run_preprocessing.cmd amt
+cd .\preprocessing
+.\run_preprocessing.cmd amt-splits
 .\run_preprocessing.cmd multifc
 ```
 
-The scripts automatically find the ZIPs one folder above. They also support ZIPs beside the scripts, or in data/ in either location. Explicit --input overrides are optional. No copying or renaming is required. Existing extracted dataset folders are not used or modified.
-
-Double-click run_preprocessing.cmd to run both. It looks for a compatible available Codex Python runtime, then py or python (3.10+ required). It does not install anything or change PATH/security settings. If no runtime is available it explains what is needed. On another machine, Python 3.10+ on PATH is sufficient. With a working interpreter selected, VS Code's Run Python File button also works without path arguments.
-
-## Automatic saving and visible checks
-
-The default is output/amt and output/multifc beside the scripts. If a directory cannot be created or written, the code automatically retries under:
-
-```text
-C:\Users\<you>\EE6405-results\<project-name>-<project-id>\amt
-C:\Users\<you>\EE6405-results\<project-name>-<project-id>\multifc
-```
-
-The project ID is a short hash of the script folder, preventing collisions between different projects. Only results are saved there; your source files and datasets stay where they are. The final [DONE] prints the exact path. If both locations fail, the error lists them. Moving the project changes its ID; rerun preprocessing in the new folder.
-
-[PASS] checks archive CRCs, row structure, IDs, labels, original hashes, full CSV/JSONL readback and manifest hashes. [WARN] identifies known dataset issues. [FAIL] stops the run with a nonzero exit code. [DONE] means output verification completed. A success manifest is invalidated before replacing output files and published only after saving succeeds. Old unused derived files may remain after a different option is run; only files listed in the current manifest belong to that run. Do not use files from a failed run.
-
-## Outputs
-
-| Dataset | Audit / reference export | Next-stage export |
-|---|---|---|
-| AMT | articles.csv: all 480 articles, raw/normalized text, separate title/body, labels, topic and pair ID | model_input.jsonl: 480 unsplit examples |
-| MultiFC | train.csv (27,940), dev.csv (3,493), test.csv (3,491): every original row, original order and metadata | official_train/dev/test.jsonl: 27,939 / 3,492 / 3,490 nonempty claims |
-| MultiFC derived evaluation | Same audit CSVs remain intact | leakage_controlled_train/dev/test.jsonl: 27,939 / 3,476 / 3,466; empty claims and heldout matches to earlier splits explicitly excluded |
-
-Each dataset also has quality_report.json and manifest.json. The report lists exclusions, distributions, overlaps and warnings. The manifest records input/script hashes, output file hashes and the exact profile paths. MultiFC JSONL contains claim text only, without reason/title metadata. The profile named official refers to official split membership after excluding empty claims; it is not a byte-identical benchmark export. The full CSVs retain all records.
-
-AMT text includes headline/body, with legit=0 and fake=1. Celebrity is excluded. MultiFC native ratings stay strings; label_key combines source and rating (e.g. pomt::half-true). There is no automatic binary conversion. Lowercase none is a native rating. Missing metadata None and ['None'] remain in CSVs.
-
-## Stage 2 — define splits and the modeling task
-
-This project still performs preprocessing only; training/evaluation scripts are not included or implied to exist.
-
-AMT has no official split. If you want a deterministic starting point, run:
+If using the original project folder instead, first run:
 
 ```powershell
-.\run_preprocessing.cmd amt-splits
+cd "C:\Users\yiwen\OneDrive\Documents\NTU\EE6405 Project\preprocessing"
 ```
 
-This also produces grouped_train/dev/test.jsonl with 384/48/48 articles, grouped by candidate filename pair and balanced per topic/class using seed 42. Use grouped cross-validation later if the research design requires it; this optional holdout split does not reproduce published cross-validation results. Keep all preprocessing/feature tuning inside the chosen training folds.
+The ZIPs are found one folder above automatically. They can also be beside the scripts or in data/ beside/above them. No copying, renaming or unzipping is needed. Existing extracted dataset folders are unused. `amt` exports AMT unsplit; `amt-splits` also creates train/dev/test. `both` runs unsplit AMT and MultiFC. Double-clicking the runner does the same as `both`.
 
-For MultiFC, choose and report either official membership or the derived overlap-controlled profile. Choose source-aware classification using label_key/domain, or define and review a domain-specific rating mapping. A binary cross-dataset experiment is not ready until that mapping and the different meanings of domain are resolved. Never interpret all non-true ratings as fake unless explicitly reproducing and labeling that experimental choice.
+The runner checks the available Codex Python runtime, then py/python. On teammates' machines, install Python 3.10+ and make it available on PATH. It does not install packages or change system settings. On macOS/Linux use `python3 preprocess_amt.py --make-splits` and `python3 preprocess_multifc.py` inside preprocessing/.
 
-## Stage 3 — connect a training script to these results
+## Use these outputs for binary training
 
-Use the importable loader below. It checks every output hash and locates the newest valid run in the project or automatic results folder. It does not require hardcoded output paths. A custom --output-dir can be supplied explicitly as output_dir to the loader.
+Both datasets' **binary** files use the same columns:
+
+`id, text, label, label_id, original_label, domain, group_id, split`
+
+**label and label_id both mean 0=real, 1=fake.** JSONL stores these as integers; when reading CSV, parse the target column as an integer. original_label preserves the publisher's original string. Use **text** as input and **label_id** as the target. Never add original_label, label, label_id or group_id to the input text. Domain is retained for grouping/reporting; source identity can be a shortcut, so a claim-text baseline should not use it as a predictor.
+
+| Dataset | Binary files in output/ | Rows |
+|---|---|---|
+| AMT unsplit | amt/binary.csv and binary.jsonl | 480: 240 real, 240 fake |
+| AMT derived split (`amt-splits`) | amt/binary_train/dev/test.csv and .jsonl | 384 / 48 / 48 |
+| MultiFC derived split | multifc/binary_train/dev/test.csv and .jsonl | 19,610 / 2,445 / 2,434 |
+
+AMT retains headline/body, all six topic domains and candidate filename-pair groups. Celebrity is a separate collection and is excluded. AMT has no official train/test split: the optional split uses seed 42 and 32/4/4 pairs per topic. Keep pairs together in any later folds. This convenience split does not reproduce a published evaluation.
+
+MultiFC binary labels use **explicit source-specific rules**, not a generic true/false substring search. Clear true/accurate equivalents and mostly-true/correct ratings map to 0; clear false/fiction equivalents and mostly-false/fiction ratings map to 1. Half-true, mixture, unknown, time-dependent, promise/position and unreviewed ratings are excluded. GossipCop's original score 0 maps to fake=1; its original 10 maps to real=0; intermediate scores are excluded. These are documented project choices for a binary task, not new ground-truth fact checks.
+
+The binary MultiFC subset keeps **24,489/34,924 rows (70.12%) and 23/26 source domains**. abbc, huca and pose have no retained rows under the reviewed rules. Retaining a source does not guarantee both classes or a test example: see the per-source counts. Train is 6,342 real / 13,268 fake; dev 793 / 1,652; test 791 / 1,643. Half-truths have not been silently assigned to fake.
+
+Original split membership/order is preserved among retained rows. Empty claims are excluded. Heldout claims matching normalized text in earlier original partitions are excluded (train > dev > test), with no reassignment or test-driven change to training. Conflicting binary targets for the same normalized text within a split would also be excluded. Other within-split duplicates remain; semantic near duplicates are not detected. This is a derived evaluation subset, not the full original benchmark.
+
+## Audit files and checks
+
+Native-label audit exports remain available: AMT articles.csv/model_input.jsonl; MultiFC train/dev/test.csv and official_*.jsonl or leakage_controlled_*.jsonl. **Their label strings are original ratings, not the numeric binary targets.** Full audit CSVs preserve every original row, raw text and metadata. MultiFC reason/title metadata can reveal verdicts and must not enter a claim-only model.
+
+MultiFC binary_mapping.csv lists all 160 observed source/rating pairs, their keep/exclude decisions and original split counts. binary_excluded.csv lists all 10,435 excluded row IDs and reasons. No excluded row is deleted from the ZIP or full native CSVs.
+
+Each output folder has quality_report.json with counts, warnings and policies, plus manifest.json with source/script/output hashes and profile paths. [PASS] verifies CRCs, schema, IDs, mapping, CSV/JSONL readback, split overlap and hashes. [WARN] reports dataset issues; [FAIL] stops with a nonzero exit code. Only [DONE] confirms a verified completed run. Two AMT articles contain pre-existing replacement characters; the scripts flag them rather than inventing repairs.
+
+Output defaults to preprocessing/output/<dataset>. On an output I/O failure, an automatic fallback is attempted at `C:\Users\<you>\EE6405-results\<script-folder>-<project-id>\<dataset>`. [DONE] prints the actual destination. The loader below finds the newest verified default/fallback run. The input archive may not be inside an output folder. Existing unused split files may remain after running a different option; only files in the current manifest belong to that run.
+
+## Handoff to training
+
+Run preprocessing first. In a training script inside preprocessing/:
 
 ```python
 import preprocess_amt
 import preprocess_multifc
 
-# After running amt-splits; raises a clear error if this profile was not created.
-amt = preprocess_amt.load_preprocessed(profile="grouped")
+# Requires amt-splits. Default AMT loader returns the unsplit binary dataset.
+amt = preprocess_amt.load_preprocessed(profile="binary_grouped")
+multifc = preprocess_multifc.load_preprocessed()  # defaults to binary
+
 amt_train_text = [row["text"] for row in amt["train"]]
 amt_train_target = [row["label_id"] for row in amt["train"]]
-
-multifc = preprocess_multifc.load_preprocessed(profile="leakage_controlled")
 multifc_train_text = [row["text"] for row in multifc["train"]]
-multifc_train_target = [row["label_key"] for row in multifc["train"]]
-# domain is source/splitting information; do not append labels or group IDs to text.
+multifc_train_target = [row["label_id"] for row in multifc["train"]]
 ```
 
-For a TF-IDF candidate: fit vocabulary, IDF and any feature selection on train only; use dev for choices; evaluate test once after choosing. For a transformer: use its own tokenizer, measure token lengths on train, and choose truncation/padding on train/dev. These scripts' word counts are only whitespace-based diagnostics. No global stopword removal, stemming or punctuation stripping is imposed. Training-only label encoders should handle heldout unseen labels explicitly; per-source label coverage is in the report.
+The loader checks output hashes and refuses unavailable profiles. A custom --output-dir must be passed explicitly as output_dir when loading. Old outputs require a rerun to create the binary profile. Native profiles remain accessible explicitly as official/leakage_controlled (MultiFC) or official/grouped (AMT).
 
-## Stage 4 — evaluation and domain adaptation
+Training is the next stage; no model is trained here. Fit TF-IDF vocabulary/IDF and feature selection on training only. For transformers use the model's tokenizer; whitespace word counts are diagnostics, not token counts. Preserve negation, case, punctuation and numbers; choose further transformations using train/dev. Use dev for model choices and test once for final evaluation. Report macro-F1, per-class/source results and a majority baseline because MultiFC is imbalanced. Do not oversample dev/test or claim the binary mapping guarantees better accuracy.
 
-Report macro-F1, per-class/per-source results and the majority-class baseline; keep raw counts and exclusions with the metrics. Compare official vs derived profiles explicitly rather than mixing their results. AMT pairs and MultiFC duplicate IDs/groups must not leak across any new folds. Do not compare a claim-only result to an evidence-based result as if the inputs were equal.
+**Domain meanings differ:** AMT domain is topic; MultiFC domain is fact-checking source. Numeric labels now match, but that alone does not make the datasets equivalent. The reference repository uses derived topics and evidence unavailable in this CodaLab bundle. Do not describe this source-domain, claim-only experiment as a reproduction of that project.
 
-Your reference repository uses a derived MultiFC release with five topics, binary ratings and evidence. The downloaded CodaLab bundle uses source domains and original ratings and lacks the retrieved evidence corpus. Reproducing the reference requires its published data/domain assignments; no additional download or substitution happens in this code.
-
-See [PREPROCESSING_NOTES.md](PREPROCESSING_NOTES.md) for the research comparison, rationale and source links.
+See [PREPROCESSING_NOTES.md](PREPROCESSING_NOTES.md) for research comparisons and mapping evidence.
