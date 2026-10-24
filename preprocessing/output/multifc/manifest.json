@@ -106,7 +106,7 @@
   },
   "schema_version": 3,
   "complete": true,
-  "created_utc": "2026-10-24T14:07:25.956266+00:00",
+  "created_utc": "2026-10-24T14:17:24.970662+00:00",
   "output_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing\\output\\multifc",
   "project_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing",
   "script_sha256": "b93c6750669317a657c36b80494eafe86f9b2251aad456589a1eff35e908e272"

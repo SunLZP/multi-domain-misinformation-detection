@@ -92,7 +92,7 @@
   },
   "schema_version": 3,
   "complete": true,
-  "created_utc": "2026-10-24T14:07:17.981754+00:00",
+  "created_utc": "2026-10-24T14:17:05.893648+00:00",
   "output_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing\\output\\amt",
   "project_directory": "C:\\Users\\yiwen\\GitHub\\multi-domain-misinformation-detection\\preprocessing",
   "script_sha256": "ecf62fddfa92d64f0cfaf9c1056d92359dc1d357622c445c3ac0da9972128c2b"
